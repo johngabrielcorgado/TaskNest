@@ -173,3 +173,22 @@ h1 {
   text-decoration: line-through;
   color: #8a8a8a;
 }
+.view-all-btn {
+  margin-top: 1.8rem;
+  width: 100%;
+  background: linear-gradient(145deg, #34c759, #28a745);
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(52, 199, 89, 0.2);
+}
+
+.view-all-btn:hover {
+  background: linear-gradient(145deg, #28a745, #1e8e3e);
+  transform: translateY(-2px);
+}

@@ -1,46 +1,45 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Task Tracker</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Task Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Student Task Tracker</h1>
 
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>🎯 Student Task Tracker</h1>
+    <!-- Task Form -->
+    <form id="taskForm" class="task-form">
+      <input type="text" id="taskTitle" placeholder="Task Title" required />
+      <input type="date" id="taskDueDate" required />
+      <select id="taskPriority">
+        <option value="Low">Low Priority</option>
+        <option value="Medium">Medium Priority</option>
+        <option value="High">High Priority</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
 
-      <!-- Task Form -->
-      <form class="task-form" id="taskForm">
-        <input type="text" id="taskTitle" placeholder="Task Title" required />
-        <input type="date" id="taskDueDate" required />
-        <select id="taskPriority">
-          <option value="Low">Low Priority</option>
-          <option value="Medium">Medium Priority</option>
-          <option value="High">High Priority</option>
-        </select>
-        <button type="submit">Add Task</button>
-      </form>
-
-      <!-- Filter -->
-      <div class="filter">
-        <label for="filterTasks">Filter:</label>
-        <select id="filterTasks">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="pending">Pending</option>
-        </select>
-      </div>
-
-      <!-- Task List -->
-      <ul class="task-list" id="taskList"></ul>
-
-      <p class="no-tasks" id="noTasks">No tasks yet. Add one above!</p>
+    <!-- Filter -->
+    <div class="filter">
+      <label for="filterTasks">Filter:</label>
+      <select id="filterTasks">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
     </div>
 
-    <!-- JS File -->
-    <script src="script.js"></script>
-  </body>
-  </html>
+    <!-- Task List -->
+    <ul id="taskList" class="task-list"></ul>
+    <p id="noTasks" class="no-tasks">No tasks yet. Add one above!</p>
+
+    <button id="viewAllBtn" class="view-all-btn">View All Tasks</button>
+  </div>
+
+  <script src="taskUtils.js"></script> 
+  <script src="script.js"></script>
+</body>
+</html>
