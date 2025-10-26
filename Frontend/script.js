@@ -15,7 +15,6 @@ function addTask(e) {
     return;
   }
 
-  // Create task item element
   const li = document.createElement("li");
   li.classList.add("task-item");
 
@@ -24,17 +23,28 @@ function addTask(e) {
       <span class="task-title">${title}</span><br>
       <small class="task-meta">Due: ${dueDate} | Priority: ${priority}</small>
     </div>
+    <div>
+      <button class="complete"> ✔ </button>
+      <button class="remove">X  </button>
+    </div>
   `;
 
-  // Append to the list
   taskList.appendChild(li);
-
-  // Hide "no tasks" message
   noTasks.style.display = "none";
-
-  // Reset the form
   taskForm.reset();
 }
 
-// Event listener for form submission
+function manageTask(e) {
+  if (e.target.classList.contains("remove")) {
+    e.target.closest("li").remove();
+
+  } 
+  else if (e.target.classList.contains("complete")) {
+    const li = e.target.closest("li");
+    li.classList.toggle("completed");
+    
+  }
+}
+
 taskForm.addEventListener("submit", addTask);
+taskList.addEventListener("click", manageTask);
